@@ -19,6 +19,7 @@ class AddItemActivity: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
     @IBOutlet weak var itemTypePicker: UIPickerView!
     var legalLocationTypes: [String] = [String]()
     var legalItemTypes: [String] = [String]()
+    static var data: [Item] = []
     var db: Firestore!
     
     override func viewDidLoad() {
@@ -133,7 +134,16 @@ class AddItemActivity: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
                 "date" : "\(month)/\(day)/\(year) \(hour):\(minute):\(second)"
                 ])
         }
+        
+        MainPageActivity.addData(name: itemNameTextField.text!)
+        //MainPageActivity.getData().append(itemNameTextField.text!)
+        
+//        AddItemActivity.data.append(Item(name: itemNameTextField.text!, cost: costTextField.text!, shortDescription: shortDescriptionTextField.text!, longDescription: longDescriptionTextField.text!, locationID: String(locationID), itemType: itemTypeSelected, date: "\(month)/\(day)/\(year) \(hour):\(minute):\(second)"))
         print("Added item")
+    }
+    
+    static func getData() -> [Item] {
+        return AddItemActivity.data
     }
 }
 

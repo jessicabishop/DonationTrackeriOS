@@ -18,6 +18,8 @@
 		E5247DF621AC9FF100701F97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5247DF521AC9FF100701F97 /* Main.storyboard */; };
 		E5247DF821ACA43B00701F97 /* AddItemActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247DF721ACA43B00701F97 /* AddItemActivity.swift */; };
 		E5247DFC21B3467800701F97 /* ItemListActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247DFB21B3467800701F97 /* ItemListActivity.swift */; };
+		E5247DFE21B358C700701F97 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247DFD21B358C700701F97 /* Item.swift */; };
+		E5247E0021B3642600701F97 /* NavigateToItemListActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247DFF21B3642600701F97 /* NavigateToItemListActivity.swift */; };
 		E57F816321A9E69D00F4DB49 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E57F816221A9E69D00F4DB49 /* GoogleService-Info.plist */; };
 		E57F816521A9EEBD00F4DB49 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F816421A9EEBD00F4DB49 /* LoginViewController.swift */; };
 		E57F816921A9F35800F4DB49 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F816821A9F35800F4DB49 /* RegisterViewController.swift */; };
@@ -44,6 +46,8 @@
 		E5247DF521AC9FF100701F97 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E5247DF721ACA43B00701F97 /* AddItemActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemActivity.swift; sourceTree = "<group>"; };
 		E5247DFB21B3467800701F97 /* ItemListActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListActivity.swift; sourceTree = "<group>"; };
+		E5247DFD21B358C700701F97 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		E5247DFF21B3642600701F97 /* NavigateToItemListActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateToItemListActivity.swift; sourceTree = "<group>"; };
 		E57F816221A9E69D00F4DB49 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E57F816421A9EEBD00F4DB49 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E57F816821A9F35800F4DB49 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				E513B1D721A88B5500CD12A6 /* UserType.swift */,
 				E57F817121AC7DDE00F4DB49 /* Location.swift */,
 				E57F817321AC88EA00F4DB49 /* AddLocationDataToDB.swift */,
+				E5247DFD21B358C700701F97 /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				E57F817521AC8CAB00F4DB49 /* LocationListActivity.swift */,
 				E5247DF721ACA43B00701F97 /* AddItemActivity.swift */,
 				E5247DFB21B3467800701F97 /* ItemListActivity.swift */,
+				E5247DFF21B3642600701F97 /* NavigateToItemListActivity.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -321,9 +327,11 @@
 				E5247DFC21B3467800701F97 /* ItemListActivity.swift in Sources */,
 				E57F817421AC88EA00F4DB49 /* AddLocationDataToDB.swift in Sources */,
 				E513B1DA21A899A200CD12A6 /* MainPageActivity.swift in Sources */,
+				E5247E0021B3642600701F97 /* NavigateToItemListActivity.swift in Sources */,
 				E57F817221AC7DDE00F4DB49 /* Location.swift in Sources */,
 				E513B1D321A888D600CD12A6 /* User.swift in Sources */,
 				E57F817621AC8CAB00F4DB49 /* LocationListActivity.swift in Sources */,
+				E5247DFE21B358C700701F97 /* Item.swift in Sources */,
 				E57F816921A9F35800F4DB49 /* RegisterViewController.swift in Sources */,
 				E5247DF821ACA43B00701F97 /* AddItemActivity.swift in Sources */,
 				E513B1D821A88B5500CD12A6 /* UserType.swift in Sources */,

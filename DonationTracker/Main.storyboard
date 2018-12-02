@@ -272,7 +272,7 @@
                                     <color key="titleColor" red="0.3341507917" green="0.41481519039999998" blue="0.54727950339999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tJW-7g-qXT" kind="show" id="zTK-ws-LX4"/>
+                                    <segue destination="2BZ-Dg-SBJ" kind="show" id="YPm-eO-OTX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -487,10 +487,65 @@
             </objects>
             <point key="canvasLocation" x="1191.2" y="-570.44334975369463"/>
         </scene>
-        <!--View Controller-->
+        <!--Navigate To Item List Activity-->
+        <scene sceneID="FMN-fP-Swv">
+            <objects>
+                <viewController id="2BZ-Dg-SBJ" customClass="NavigateToItemListActivity" customModule="DonationTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NgO-qV-pR2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NO2-Cq-vda">
+                                <rect key="frame" x="16" y="156" width="123" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scu-35-4Mk">
+                                <rect key="frame" x="0.0" y="203" width="375" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEK-1V-Wdc">
+                                <rect key="frame" x="0.0" y="717" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.80370094150000004" green="0.8676863641" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="1rx-Qd-8tR"/>
+                                    <constraint firstAttribute="height" constant="50" id="lUs-Vs-MT5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="See Items">
+                                    <color key="titleColor" red="0.3341507917" green="0.41481519039999998" blue="0.54727950339999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="tJW-7g-qXT" kind="show" id="qaa-6P-nQH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3341507917" green="0.41481519039999998" blue="0.54727950339999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="scu-35-4Mk" firstAttribute="leading" secondItem="Shs-TU-olN" secondAttribute="leading" id="9Uc-e6-2Hn"/>
+                            <constraint firstItem="vEK-1V-Wdc" firstAttribute="trailing" secondItem="Shs-TU-olN" secondAttribute="trailing" id="C7s-rO-78u"/>
+                            <constraint firstItem="NO2-Cq-vda" firstAttribute="top" secondItem="Shs-TU-olN" secondAttribute="top" constant="68" id="LRt-hr-6yF"/>
+                            <constraint firstItem="Shs-TU-olN" firstAttribute="trailing" secondItem="NO2-Cq-vda" secondAttribute="trailing" constant="236" id="Ujq-W2-Hay"/>
+                            <constraint firstItem="NO2-Cq-vda" firstAttribute="leading" secondItem="Shs-TU-olN" secondAttribute="leading" constant="16" id="XPD-JL-kmU"/>
+                            <constraint firstItem="scu-35-4Mk" firstAttribute="trailing" secondItem="Shs-TU-olN" secondAttribute="trailing" id="Zm0-OE-VCd"/>
+                            <constraint firstItem="Shs-TU-olN" firstAttribute="bottom" secondItem="vEK-1V-Wdc" secondAttribute="bottom" constant="11" id="fww-87-BBj"/>
+                            <constraint firstItem="vEK-1V-Wdc" firstAttribute="leading" secondItem="Shs-TU-olN" secondAttribute="leading" id="lRJ-mA-Eq8"/>
+                            <constraint firstItem="scu-35-4Mk" firstAttribute="top" secondItem="NO2-Cq-vda" secondAttribute="bottom" constant="26" id="v5u-X2-e6Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Shs-TU-olN"/>
+                    </view>
+                    <connections>
+                        <outlet property="locationPicker" destination="scu-35-4Mk" id="dRi-G3-bkk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tdk-1R-E0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="37.600000000000001" y="215.76354679802955"/>
+        </scene>
+        <!--Item List Activity-->
         <scene sceneID="6SO-eU-92M">
             <objects>
-                <viewController id="tJW-7g-qXT" sceneMemberID="viewController">
+                <viewController id="tJW-7g-qXT" customClass="ItemListActivity" customModule="DonationTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rnT-Wy-3jb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -499,7 +554,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <color key="backgroundColor" red="0.3341507917" green="0.41481519039999998" blue="0.54727950339999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Xnd-9F-YzM" userLabel="cellReuseIdentifier">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellReuseIdentifier2" id="Xnd-9F-YzM" userLabel="cellReuseIdentifier2">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xnd-9F-YzM" id="tvE-rb-KFo">
@@ -520,10 +575,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zah-cf-lva"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="fa0-tu-hdy" id="OMm-K9-6Am"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N2g-00-o2g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1172" y="103.44827586206897"/>
+            <point key="canvasLocation" x="1234" y="219"/>
         </scene>
         <!--Login-->
         <scene sceneID="alg-wx-4SH">
