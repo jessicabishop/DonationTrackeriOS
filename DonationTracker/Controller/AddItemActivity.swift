@@ -135,10 +135,8 @@ class AddItemActivity: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
                 ])
         }
         
-        MainPageActivity.addData(name: itemNameTextField.text!)
-        //MainPageActivity.getData().append(itemNameTextField.text!)
+        MainPageActivity.addData(item: Item(name: itemNameTextField.text!, cost: costTextField.text!, shortDescription: shortDescriptionTextField.text!, longDescription: longDescriptionTextField.text!, locationID: String(locationID), itemType: itemTypeSelected, date: "\(month)/\(day)/\(year) \(hour):\(minute):\(second)"))
         
-//        AddItemActivity.data.append(Item(name: itemNameTextField.text!, cost: costTextField.text!, shortDescription: shortDescriptionTextField.text!, longDescription: longDescriptionTextField.text!, locationID: String(locationID), itemType: itemTypeSelected, date: "\(month)/\(day)/\(year) \(hour):\(minute):\(second)"))
         print("Added item")
     }
     

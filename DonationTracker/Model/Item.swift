@@ -31,5 +31,16 @@ class Item {
         return name
     }
     
+    func getLocationID() -> String {
+        return locationID
+    }
+    
+    func getItemType() -> String {
+        return itemType
+    }
+    
+    func getCost() -> String {
+        return cost
+    }
     
 }

@@ -516,6 +516,7 @@
                                     <color key="titleColor" red="0.3341507917" green="0.41481519039999998" blue="0.54727950339999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
+                                    <action selector="onSeeItem:" destination="2BZ-Dg-SBJ" eventType="touchUpInside" id="7gT-4L-hSO"/>
                                     <segue destination="tJW-7g-qXT" kind="show" id="qaa-6P-nQH"/>
                                 </connections>
                             </button>

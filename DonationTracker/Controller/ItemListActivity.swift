@@ -10,11 +10,12 @@ import Foundation
 import UIKit
 import Firebase
 
-class ItemListActivity: UIViewController, UITableViewDataSource {
+class ItemListActivity: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    private static var itemData:[Item] = []
     private static var data:[String] = []
-    private static var beforeData:[Item] = []
     @IBOutlet weak var tableView: UITableView!
     var db: Firestore!
+    static var currentLocation: Int = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,22 +24,29 @@ class ItemListActivity: UIViewController, UITableViewDataSource {
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
         
-        ItemListActivity.data = MainPageActivity.getData()
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
+        ItemListActivity.data = []
+        
+        ItemListActivity.currentLocation = NavigateToItemListActivity.getLocationSelected()
+        
+        ItemListActivity.itemData = MainPageActivity.getData()
+        
+        print(ItemListActivity.currentLocation)
+        
+        for item in ItemListActivity.itemData {
+            var itemLocID: Int = Int(item.getLocationID())!
+            if (itemLocID == ItemListActivity.currentLocation) {
+                print(itemLocID)
+                ItemListActivity.data.append("Item name: \(item.getName()), ItemType: \(item.getItemType()), Cost: \(item.getCost())")
+            }
+        }
+        
+        
         
         
         tableView.dataSource = self
-        
-        //ItemListActivity.data.append("test")
-        
-        //readData()
-        
-        //ItemListActivity.beforeData = AddItemActivity.getData()
-        
-//        for item in ItemListActivity.beforeData {
-//            ItemListActivity.data.append(item.getName())
-//        }
-        
-        //tableView.dataSource = self
         
         
     }
@@ -55,6 +63,12 @@ class ItemListActivity: UIViewController, UITableViewDataSource {
         return ItemListActivity.data.count
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("section: \(indexPath.section)")
+        print("row: \(indexPath.row)")
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier2")! //1.
         
@@ -63,23 +77,6 @@ class ItemListActivity: UIViewController, UITableViewDataSource {
         cell.textLabel?.text = text //3.
         
         return cell //4.
-    }
-    
-    func readData() {
-        //var testing:[String] = []
-        self.db.collection("items").getDocuments { (snapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in snapshot!.documents {
-                    let name = document.get("name") as! String
-            
-                    print(name)
-                    ItemListActivity.data.append(name)
-                }
-            }
-        }
-        
     }
     
 
