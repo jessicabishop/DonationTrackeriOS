@@ -179,7 +179,6 @@
                                 </state>
                                 <connections>
                                     <action selector="registerButtonPressed:" destination="Cou-Cj-Erl" eventType="touchUpInside" id="puC-Fh-awx"/>
-                                    <segue destination="gkr-As-uRp" kind="show" identifier="toMainPageFromRegistration" id="v9f-lo-9zB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -216,6 +215,7 @@
                         <outlet property="emailTextFieldR" destination="ENU-4W-6h4" id="E3S-zT-mWe"/>
                         <outlet property="passwordTextFieldR" destination="ETJ-Xa-nZK" id="qhF-MD-p42"/>
                         <outlet property="userTypePickerView" destination="YJ8-3X-1CT" id="Pud-9g-Q3D"/>
+                        <segue destination="gkr-As-uRp" kind="show" identifier="registrationToMain" id="bg0-IL-esI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohn-Ic-aRR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -539,7 +539,7 @@
                         <outlet property="locationPicker" destination="nOW-Vz-7bU" id="D7h-ux-Cg9"/>
                         <outlet property="longDescriptionTextField" destination="pcg-UD-v6a" id="NHC-Ui-t3a"/>
                         <outlet property="shortDescriptionTextField" destination="wur-i0-hrI" id="976-fn-IyB"/>
-                        <segue destination="gkr-As-uRp" kind="show" identifier="addItemToMainPage" id="bNf-Nd-rsB"/>
+                        <segue destination="gkr-As-uRp" kind="show" identifier="addToMain" id="bIA-9a-42N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QcM-PT-g3y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1132,7 +1132,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onDeleteItem:" destination="eWV-Ad-7lH" eventType="touchUpInside" id="9lu-e8-lqm"/>
-                                    <segue destination="tJW-7g-qXT" kind="show" id="0Eb-n4-y0T"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0R-Kn-hm7">
@@ -1207,6 +1206,7 @@
                         <outlet property="longDescriptionLabel" destination="hYi-Ia-Ejv" id="EeQ-GE-3PD"/>
                         <outlet property="nameLabel" destination="xgs-Sy-hj7" id="bXP-6f-4Wv"/>
                         <outlet property="shortDescriptionLabel" destination="DU4-4f-3Iz" id="Prm-JM-7OE"/>
+                        <segue destination="tJW-7g-qXT" kind="show" identifier="deleteToList" id="erb-wD-jrf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c35-34-BaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1263,7 +1263,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onMakeChanges:" destination="13K-9C-S39" eventType="touchUpInside" id="sQH-qT-YzM"/>
-                                    <segue destination="tJW-7g-qXT" kind="show" id="sjV-OB-htQ"/>
+                                    <segue destination="tJW-7g-qXT" kind="show" id="Msb-Mj-2O2"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6lT-f5-xM5">
@@ -1468,10 +1468,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dYv-uh-4k2"/>
+        <segue reference="erb-wD-jrf"/>
         <segue reference="qQi-Cc-upW"/>
         <segue reference="9GV-Wa-XA4"/>
-        <segue reference="bNf-Nd-rsB"/>
+        <segue reference="bIA-9a-42N"/>
         <segue reference="mRb-qm-efD"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -53,7 +53,10 @@ class LoginViewController: UIViewController {
                 print("Login successful")
                 
                 self.showToast(message: "Login Successful")
-                self.performSegue(withIdentifier: "fromLoginToMainPage", sender: self)
+                DispatchQueue.main.asyncAfter(deadline:.now() + 0.5, execute: {
+                    self.performSegue(withIdentifier: "fromLoginToMainPage", sender: self)
+                })
+                //self.performSegue(withIdentifier: "fromLoginToMainPage", sender: self)
             }
         }
         

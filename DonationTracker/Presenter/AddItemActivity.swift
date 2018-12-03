@@ -92,12 +92,6 @@ class AddItemActivity: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         let hour:Int = dateTimeComponents.hour!
         let minute:Int = dateTimeComponents.minute!
         let second:Int = dateTimeComponents.second!
-//        print(year)
-//        print(month)
-//        print(day)
-//        print(hour)
-//        print(minute)
-//        print(second)
         print("\(month)/\(day)/\(year) \(hour):\(minute):\(second)")
         
         let locationSelected = legalLocationTypes[locationPicker.selectedRow(inComponent: 0)]
@@ -141,7 +135,9 @@ class AddItemActivity: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
             
             print("Added item")
             
-            self.performSegue(withIdentifier: "addItemToMainPage", sender: self)
+            DispatchQueue.main.asyncAfter(deadline:.now() + 0.5, execute: {
+                self.performSegue(withIdentifier: "addToMain", sender: self)
+            })
         } else {
             self.showToast(message: "Add Unsuccessful")
         }

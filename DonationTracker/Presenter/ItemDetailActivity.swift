@@ -65,6 +65,25 @@ class ItemDetailActivity: UIViewController {
         
     }
     
+    func showToast(message : String) {
+        
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 140, y: self.view.frame.size.height-100, width: 300, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.textAlignment = .center;
+        toastLabel.font = UIFont(name: "Montserrat-Light", size: 12.0)
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -85,8 +104,10 @@ class ItemDetailActivity: UIViewController {
         documentRef.delete() { err in
             if let err = err {
                 print("Error removing document: \(err)")
+                self.showToast(message: "Item Delete Failed")
             } else {
                 print("Document successfully removed!")
+                
             }
         }
         
@@ -94,9 +115,14 @@ class ItemDetailActivity: UIViewController {
         
         if (wasDeletedByArray) {
             print("Successfully deleted from array")
+            self.showToast(message: "Item deleted")
+            DispatchQueue.main.asyncAfter(deadline:.now() + 0.5, execute: {
+                self.performSegue(withIdentifier: "deleteToList", sender: self)
+            })
         } else {
             print("Did not remove from array")
         }
+        
         
     }
 }
