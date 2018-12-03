@@ -340,6 +340,65 @@
             </objects>
             <point key="canvasLocation" x="2" y="-2246"/>
         </scene>
+        <!--Reset Password Activity-->
+        <scene sceneID="7BY-zu-3vJ">
+            <objects>
+                <viewController id="xGZ-h1-RyX" customClass="ResetPasswordActivity" customModule="DonationTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0lW-gA-Ct5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTH-K8-wCD">
+                                <rect key="frame" x="47" y="138" width="46" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q84-X6-e8q">
+                                <rect key="frame" x="114" y="133" width="239" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czu-2v-enw">
+                                <rect key="frame" x="0.0" y="226" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.80370094150000004" green="0.8676863641" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="9Su-es-Gdv"/>
+                                    <constraint firstAttribute="height" constant="50" id="vYA-z3-ITn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" red="0.3341507917" green="0.41481519039999998" blue="0.54727950339999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="xGZ-h1-RyX" eventType="touchUpInside" id="wy6-wJ-xbl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3341507917" green="0.41481519039999998" blue="0.54727950339999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="czu-2v-enw" firstAttribute="trailing" secondItem="EvN-zZ-4cQ" secondAttribute="trailing" id="255-H5-Vc7"/>
+                            <constraint firstItem="Q84-X6-e8q" firstAttribute="leading" secondItem="KTH-K8-wCD" secondAttribute="trailing" constant="21" id="6gZ-zF-NIp"/>
+                            <constraint firstItem="EvN-zZ-4cQ" firstAttribute="trailing" secondItem="Q84-X6-e8q" secondAttribute="trailing" constant="22" id="9yF-oy-VeO"/>
+                            <constraint firstItem="KTH-K8-wCD" firstAttribute="leading" secondItem="EvN-zZ-4cQ" secondAttribute="leading" constant="47" id="DoT-35-zh5"/>
+                            <constraint firstItem="Q84-X6-e8q" firstAttribute="leading" secondItem="KTH-K8-wCD" secondAttribute="trailing" constant="21" id="IA6-Td-qUv"/>
+                            <constraint firstItem="Q84-X6-e8q" firstAttribute="top" secondItem="EvN-zZ-4cQ" secondAttribute="top" constant="89" id="J0n-pf-twR"/>
+                            <constraint firstItem="czu-2v-enw" firstAttribute="leading" secondItem="EvN-zZ-4cQ" secondAttribute="leading" id="OtK-Tb-sgo"/>
+                            <constraint firstItem="KTH-K8-wCD" firstAttribute="top" secondItem="EvN-zZ-4cQ" secondAttribute="top" constant="94" id="iSm-Rm-7qF"/>
+                            <constraint firstItem="EvN-zZ-4cQ" firstAttribute="bottom" secondItem="czu-2v-enw" secondAttribute="bottom" constant="502" id="u5M-fB-xQH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EvN-zZ-4cQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="Q84-X6-e8q" id="AgZ-AL-kVL"/>
+                        <segue destination="l8D-hA-4Ya" kind="show" identifier="resetToWelcome" id="4xr-j8-j2d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XrT-4i-N2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1144.8" y="-1903.4482758620691"/>
+        </scene>
         <!--Navigate To Map Activity-->
         <scene sceneID="cuj-nI-dHu">
             <objects>
@@ -1416,6 +1475,16 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vte-ry-6HQ">
+                                <rect key="frame" x="16" y="323" width="137" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Forgot Password?">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xGZ-h1-RyX" kind="show" id="gdc-35-5Zf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2710504702" green="0.33679268359999998" blue="0.45033708589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -1423,7 +1492,10 @@
                             <constraint firstItem="nZi-WP-n9S" firstAttribute="trailing" secondItem="JQn-8y-bDm" secondAttribute="trailing" constant="270" id="BzH-de-2pW"/>
                             <constraint firstItem="9VT-tv-i8W" firstAttribute="trailing" secondItem="nZi-WP-n9S" secondAttribute="trailing" id="HkY-8F-Pi5"/>
                             <constraint firstItem="JQn-8y-bDm" firstAttribute="leading" secondItem="nZi-WP-n9S" secondAttribute="leading" constant="26" id="IDk-iI-xgH"/>
+                            <constraint firstItem="vte-ry-6HQ" firstAttribute="leading" secondItem="nZi-WP-n9S" secondAttribute="leading" constant="16" id="IJY-LH-Gf9"/>
                             <constraint firstItem="nZi-WP-n9S" firstAttribute="trailing" secondItem="Ywb-kp-OzW" secondAttribute="trailing" constant="16" id="QCF-95-EQ8"/>
+                            <constraint firstItem="nZi-WP-n9S" firstAttribute="trailing" secondItem="vte-ry-6HQ" secondAttribute="trailing" constant="222" id="RNu-2a-xHY"/>
+                            <constraint firstItem="nZi-WP-n9S" firstAttribute="bottom" secondItem="vte-ry-6HQ" secondAttribute="bottom" constant="422" id="RUf-RS-HoX"/>
                             <constraint firstItem="Ywb-kp-OzW" firstAttribute="top" secondItem="nZi-WP-n9S" secondAttribute="top" constant="126" id="V8E-lQ-ccq"/>
                             <constraint firstItem="9VT-tv-i8W" firstAttribute="top" secondItem="JQn-8y-bDm" secondAttribute="bottom" constant="30" id="Vz8-xg-EBX"/>
                             <constraint firstItem="9VT-tv-i8W" firstAttribute="leading" secondItem="nZi-WP-n9S" secondAttribute="leading" id="WoZ-vn-9uk"/>
@@ -1471,7 +1543,7 @@
         <segue reference="erb-wD-jrf"/>
         <segue reference="qQi-Cc-upW"/>
         <segue reference="9GV-Wa-XA4"/>
-        <segue reference="bIA-9a-42N"/>
-        <segue reference="mRb-qm-efD"/>
+        <segue reference="mDu-5V-gHi"/>
+        <segue reference="4xr-j8-j2d"/>
     </inferredMetricsTieBreakers>
 </document>
