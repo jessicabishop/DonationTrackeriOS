@@ -24,6 +24,8 @@
 		E5247E0421B474D700701F97 /* EditItemActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247E0321B474D700701F97 /* EditItemActivity.swift */; };
 		E5247E0621B4A4C400701F97 /* MapActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247E0521B4A4C400701F97 /* MapActivity.swift */; };
 		E5247E0821B4A98000701F97 /* NavigateToMapActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247E0721B4A98000701F97 /* NavigateToMapActivity.swift */; };
+		E5247E0A21B4C1BF00701F97 /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247E0921B4C1BF00701F97 /* LocationDetails.swift */; };
+		E5247E0C21B4CE0200701F97 /* WelcomeActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247E0B21B4CE0200701F97 /* WelcomeActivity.swift */; };
 		E57F816321A9E69D00F4DB49 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E57F816221A9E69D00F4DB49 /* GoogleService-Info.plist */; };
 		E57F816521A9EEBD00F4DB49 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F816421A9EEBD00F4DB49 /* LoginViewController.swift */; };
 		E57F816921A9F35800F4DB49 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F816821A9F35800F4DB49 /* RegisterViewController.swift */; };
@@ -56,6 +58,8 @@
 		E5247E0321B474D700701F97 /* EditItemActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemActivity.swift; sourceTree = "<group>"; };
 		E5247E0521B4A4C400701F97 /* MapActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapActivity.swift; sourceTree = "<group>"; };
 		E5247E0721B4A98000701F97 /* NavigateToMapActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateToMapActivity.swift; sourceTree = "<group>"; };
+		E5247E0921B4C1BF00701F97 /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
+		E5247E0B21B4CE0200701F97 /* WelcomeActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeActivity.swift; sourceTree = "<group>"; };
 		E57F816221A9E69D00F4DB49 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E57F816421A9EEBD00F4DB49 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E57F816821A9F35800F4DB49 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 				E5247E0321B474D700701F97 /* EditItemActivity.swift */,
 				E5247E0521B4A4C400701F97 /* MapActivity.swift */,
 				E5247E0721B4A98000701F97 /* NavigateToMapActivity.swift */,
+				E5247E0921B4C1BF00701F97 /* LocationDetails.swift */,
+				E5247E0B21B4CE0200701F97 /* WelcomeActivity.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -342,6 +348,7 @@
 				E57F816521A9EEBD00F4DB49 /* LoginViewController.swift in Sources */,
 				E5247DFC21B3467800701F97 /* ItemListActivity.swift in Sources */,
 				E57F817421AC88EA00F4DB49 /* AddLocationDataToDB.swift in Sources */,
+				E5247E0A21B4C1BF00701F97 /* LocationDetails.swift in Sources */,
 				E5247E0421B474D700701F97 /* EditItemActivity.swift in Sources */,
 				E513B1DA21A899A200CD12A6 /* MainPageActivity.swift in Sources */,
 				E5247E0021B3642600701F97 /* NavigateToItemListActivity.swift in Sources */,
@@ -349,6 +356,7 @@
 				E513B1D321A888D600CD12A6 /* User.swift in Sources */,
 				E57F817621AC8CAB00F4DB49 /* LocationListActivity.swift in Sources */,
 				E5247E0621B4A4C400701F97 /* MapActivity.swift in Sources */,
+				E5247E0C21B4CE0200701F97 /* WelcomeActivity.swift in Sources */,
 				E5247DFE21B358C700701F97 /* Item.swift in Sources */,
 				E57F816921A9F35800F4DB49 /* RegisterViewController.swift in Sources */,
 				E5247DF821ACA43B00701F97 /* AddItemActivity.swift in Sources */,

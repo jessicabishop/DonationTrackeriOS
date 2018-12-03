@@ -10,24 +10,17 @@ import Foundation
 import UIKit
 import Firebase
 
-class LocationListActivity: UIViewController, UITableViewDataSource {
-    private var data: [String] = []
+class LocationListActivity: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    private static var data: [String] = []
     @IBOutlet weak var tableView: UITableView!
+    static var currentLocation: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let settings = FirestoreSettings()
-//        Firestore.firestore().settings = settings
+        self.navigationItem.hidesBackButton = true
         
-//        var db = Firestore.firestore()
-//        let locationsRef = db.collection("locations").document("1")
-//        print(locationsRef)
-//        let loc1 = locationsRef.whereField("locationID", isEqualTo: 1)
-//        print(loc1.)
-//        data.append("\(loc1)")
-//        let loc2 = locationsRef.whereField("locationID", isEqualTo: 2)
-//        data.append("\(loc2)")
+        LocationListActivity.data = []
         
         var contents = ""
         guard let filePath = Bundle.main.path(forResource: "LocationData", ofType: "csv")
@@ -45,11 +38,12 @@ class LocationListActivity: UIViewController, UITableViewDataSource {
         
         var j = 0
         while (j < locationData.count) {
-            data.append("\(locationData[j][1])")
+            LocationListActivity.data.append("\(locationData[j][1])")
             j = j + 1
         }
         
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,13 +55,18 @@ class LocationListActivity: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return LocationListActivity.data.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(LocationListActivity.data[indexPath.row])
+        LocationListActivity.currentLocation = LocationListActivity.data[indexPath.row]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")! //1.
         
-        let text = data[indexPath.row] //2.
+        let text = LocationListActivity.data[indexPath.row] //2.
         
         cell.textLabel?.text = text //3.
         
@@ -137,5 +136,9 @@ class LocationListActivity: UIViewController, UITableViewDataSource {
             data.formIndex(after: &index) // Increment.
         }
         return result
+    }
+    
+    static func getCurrentLocation() -> String {
+        return LocationListActivity.currentLocation
     }
 }
