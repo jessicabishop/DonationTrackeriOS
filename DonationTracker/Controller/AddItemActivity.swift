@@ -123,7 +123,7 @@ class AddItemActivity: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         print(locationID)
         print(itemTypeSelected)
         
-        if (itemNameTextField.text! != nil && costTextField != nil) {
+        if (!itemNameTextField.text!.isEmpty && !costTextField.text!.isEmpty) {
             db.collection("items").document(itemNameTextField.text!).setData([
                 "name" : itemNameTextField.text!,
                 "cost" : costTextField.text!,
@@ -133,15 +133,43 @@ class AddItemActivity: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
                 "itemType" : itemTypeSelected,
                 "date" : "\(month)/\(day)/\(year) \(hour):\(minute):\(second)"
                 ])
+            
+            MainPageActivity.addData(item: Item(name: itemNameTextField.text!, cost: costTextField.text!, shortDescription: shortDescriptionTextField.text!, longDescription: longDescriptionTextField.text!, locationID: String(locationID), itemType: itemTypeSelected, date: "\(month)/\(day)/\(year) \(hour):\(minute):\(second)"))
+            
+            self.showToast(message: "Item Added")
+            
+            
+            print("Added item")
+            
+            self.performSegue(withIdentifier: "addItemToMainPage", sender: self)
+        } else {
+            self.showToast(message: "Add Unsuccessful")
         }
         
-        MainPageActivity.addData(item: Item(name: itemNameTextField.text!, cost: costTextField.text!, shortDescription: shortDescriptionTextField.text!, longDescription: longDescriptionTextField.text!, locationID: String(locationID), itemType: itemTypeSelected, date: "\(month)/\(day)/\(year) \(hour):\(minute):\(second)"))
         
-        print("Added item")
     }
     
     static func getData() -> [Item] {
         return AddItemActivity.data
+    }
+    
+    func showToast(message : String) {
+        
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 140, y: self.view.frame.size.height-100, width: 300, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.textAlignment = .center;
+        toastLabel.font = UIFont(name: "Montserrat-Light", size: 12.0)
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
     }
 }
 

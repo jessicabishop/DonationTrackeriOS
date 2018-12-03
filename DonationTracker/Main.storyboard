@@ -448,7 +448,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onAddItem:" destination="7qX-gV-Q0H" eventType="touchUpInside" id="ZzT-Vp-eoU"/>
-                                    <segue destination="gkr-As-uRp" kind="show" id="26E-Gn-z1w"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pcg-UD-v6a">
@@ -540,11 +539,12 @@
                         <outlet property="locationPicker" destination="nOW-Vz-7bU" id="D7h-ux-Cg9"/>
                         <outlet property="longDescriptionTextField" destination="pcg-UD-v6a" id="NHC-Ui-t3a"/>
                         <outlet property="shortDescriptionTextField" destination="wur-i0-hrI" id="976-fn-IyB"/>
+                        <segue destination="gkr-As-uRp" kind="show" identifier="addItemToMainPage" id="bNf-Nd-rsB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QcM-PT-g3y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1189.5999999999999" y="-1254.6798029556651"/>
+            <point key="canvasLocation" x="1191" y="-1358"/>
         </scene>
         <!--Location List Activity-->
         <scene sceneID="AJS-BI-waq">
@@ -1382,7 +1382,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onLoginButtonPressed:" destination="Ncc-c5-Nsi" eventType="touchUpInside" id="t8l-8n-lj5"/>
-                                    <segue destination="gkr-As-uRp" kind="show" identifier="toMainPageFromLogin" id="XO7-35-Ybf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQn-8y-bDm">
@@ -1442,6 +1441,7 @@
                     <connections>
                         <outlet property="emailTextFieldL" destination="Ywb-kp-OzW" id="pWq-qH-VgX"/>
                         <outlet property="passwordTextFieldL" destination="rxa-bX-6MY" id="xei-q2-DaS"/>
+                        <segue destination="gkr-As-uRp" kind="show" identifier="fromLoginToMainPage" id="mDu-5V-gHi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAo-kb-utH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1468,11 +1468,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Fbd-FZ-Enw"/>
         <segue reference="dYv-uh-4k2"/>
         <segue reference="qQi-Cc-upW"/>
         <segue reference="9GV-Wa-XA4"/>
-        <segue reference="tme-sd-fo9"/>
+        <segue reference="bNf-Nd-rsB"/>
         <segue reference="mRb-qm-efD"/>
     </inferredMetricsTieBreakers>
 </document>

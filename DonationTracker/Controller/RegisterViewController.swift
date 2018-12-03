@@ -74,6 +74,14 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
                         }
                     })
                     
+                    Auth.auth().currentUser?.sendEmailVerification { (error) in
+                        if error != nil {
+                            print(error!)
+                        } else {
+                            print("Sending email")
+                        }
+                    }
+                    
                     //SVProgressHUD.dismiss()
                     
                     //self.performSegue(withIdentifier: "toMainPageFromRegistration", sender: self)
