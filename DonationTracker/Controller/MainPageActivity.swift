@@ -17,6 +17,8 @@ class MainPageActivity: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.hidesBackButton = true
+        
         let settings = FirestoreSettings()
         Firestore.firestore().settings = settings
         db = Firestore.firestore()
@@ -60,6 +62,25 @@ class MainPageActivity: UIViewController {
     
     static func addData(item:Item) {
         MainPageActivity.data.append(item)
+    }
+    
+    static func findItem(item:Item) -> Item {
+        for itemInData in data {
+            if (item.getName() == itemInData.getName()) {
+                return itemInData;
+            }
+        }
+        return Item(name: "", cost: "", shortDescription: "", longDescription: "", locationID: "", itemType: "", date: "")
+    }
+    
+    static func deleteItem(item:Item) -> Bool {
+        for (index, element) in data.enumerated() {
+            if (element.getName() == item.getName()) {
+                data.remove(at: index)
+                return true
+            }
+        }
+        return false
     }
 
 }

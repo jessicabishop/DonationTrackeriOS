@@ -20,6 +20,10 @@
 		E5247DFC21B3467800701F97 /* ItemListActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247DFB21B3467800701F97 /* ItemListActivity.swift */; };
 		E5247DFE21B358C700701F97 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247DFD21B358C700701F97 /* Item.swift */; };
 		E5247E0021B3642600701F97 /* NavigateToItemListActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247DFF21B3642600701F97 /* NavigateToItemListActivity.swift */; };
+		E5247E0221B466C700701F97 /* ItemDetailActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247E0121B466C700701F97 /* ItemDetailActivity.swift */; };
+		E5247E0421B474D700701F97 /* EditItemActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247E0321B474D700701F97 /* EditItemActivity.swift */; };
+		E5247E0621B4A4C400701F97 /* MapActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247E0521B4A4C400701F97 /* MapActivity.swift */; };
+		E5247E0821B4A98000701F97 /* NavigateToMapActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5247E0721B4A98000701F97 /* NavigateToMapActivity.swift */; };
 		E57F816321A9E69D00F4DB49 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E57F816221A9E69D00F4DB49 /* GoogleService-Info.plist */; };
 		E57F816521A9EEBD00F4DB49 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F816421A9EEBD00F4DB49 /* LoginViewController.swift */; };
 		E57F816921A9F35800F4DB49 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57F816821A9F35800F4DB49 /* RegisterViewController.swift */; };
@@ -48,6 +52,10 @@
 		E5247DFB21B3467800701F97 /* ItemListActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListActivity.swift; sourceTree = "<group>"; };
 		E5247DFD21B358C700701F97 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		E5247DFF21B3642600701F97 /* NavigateToItemListActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateToItemListActivity.swift; sourceTree = "<group>"; };
+		E5247E0121B466C700701F97 /* ItemDetailActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailActivity.swift; sourceTree = "<group>"; };
+		E5247E0321B474D700701F97 /* EditItemActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemActivity.swift; sourceTree = "<group>"; };
+		E5247E0521B4A4C400701F97 /* MapActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapActivity.swift; sourceTree = "<group>"; };
+		E5247E0721B4A98000701F97 /* NavigateToMapActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateToMapActivity.swift; sourceTree = "<group>"; };
 		E57F816221A9E69D00F4DB49 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E57F816421A9EEBD00F4DB49 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E57F816821A9F35800F4DB49 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +161,10 @@
 				E5247DF721ACA43B00701F97 /* AddItemActivity.swift */,
 				E5247DFB21B3467800701F97 /* ItemListActivity.swift */,
 				E5247DFF21B3642600701F97 /* NavigateToItemListActivity.swift */,
+				E5247E0121B466C700701F97 /* ItemDetailActivity.swift */,
+				E5247E0321B474D700701F97 /* EditItemActivity.swift */,
+				E5247E0521B4A4C400701F97 /* MapActivity.swift */,
+				E5247E0721B4A98000701F97 /* NavigateToMapActivity.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -304,11 +316,15 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DonationTracker/Pods-DonationTracker-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates.bundle",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,14 +342,18 @@
 				E57F816521A9EEBD00F4DB49 /* LoginViewController.swift in Sources */,
 				E5247DFC21B3467800701F97 /* ItemListActivity.swift in Sources */,
 				E57F817421AC88EA00F4DB49 /* AddLocationDataToDB.swift in Sources */,
+				E5247E0421B474D700701F97 /* EditItemActivity.swift in Sources */,
 				E513B1DA21A899A200CD12A6 /* MainPageActivity.swift in Sources */,
 				E5247E0021B3642600701F97 /* NavigateToItemListActivity.swift in Sources */,
 				E57F817221AC7DDE00F4DB49 /* Location.swift in Sources */,
 				E513B1D321A888D600CD12A6 /* User.swift in Sources */,
 				E57F817621AC8CAB00F4DB49 /* LocationListActivity.swift in Sources */,
+				E5247E0621B4A4C400701F97 /* MapActivity.swift in Sources */,
 				E5247DFE21B358C700701F97 /* Item.swift in Sources */,
 				E57F816921A9F35800F4DB49 /* RegisterViewController.swift in Sources */,
 				E5247DF821ACA43B00701F97 /* AddItemActivity.swift in Sources */,
+				E5247E0821B4A98000701F97 /* NavigateToMapActivity.swift in Sources */,
+				E5247E0221B466C700701F97 /* ItemDetailActivity.swift in Sources */,
 				E513B1D821A88B5500CD12A6 /* UserType.swift in Sources */,
 				E513B1D121A888C900CD12A6 /* UserInformation.swift in Sources */,
 				E513B1B921A87CC100CD12A6 /* AppDelegate.swift in Sources */,

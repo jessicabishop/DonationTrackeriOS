@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let myDatabase = Database.database().reference()
         
         myDatabase.setValue("We've got data")
+        
+        GMSServices.provideAPIKey("AIzaSyBInRFfqpJBJITez49mClOz9l_s0gYPZLU")
+        GMSPlacesClient.provideAPIKey("AIzaSyBInRFfqpJBJITez49mClOz9l_s0gYPZLU")
         
         return true
     }

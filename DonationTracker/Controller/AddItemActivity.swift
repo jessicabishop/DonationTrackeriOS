@@ -100,8 +100,8 @@ class AddItemActivity: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
 //        print(second)
         print("\(month)/\(day)/\(year) \(hour):\(minute):\(second)")
         
-        var locationSelected = legalLocationTypes[locationPicker.selectedRow(inComponent: 0)]
-        var itemTypeSelected = legalItemTypes[itemTypePicker.selectedRow(inComponent: 0)]
+        let locationSelected = legalLocationTypes[locationPicker.selectedRow(inComponent: 0)]
+        let itemTypeSelected = legalItemTypes[itemTypePicker.selectedRow(inComponent: 0)]
         var locationID = 0
         switch locationSelected {
         case "AFD Station 4":
@@ -124,7 +124,7 @@ class AddItemActivity: UIViewController, UIPickerViewDelegate, UIPickerViewDataS
         print(itemTypeSelected)
         
         if (itemNameTextField.text! != nil && costTextField != nil) {
-            db.collection("items").document().setData([
+            db.collection("items").document(itemNameTextField.text!).setData([
                 "name" : itemNameTextField.text!,
                 "cost" : costTextField.text!,
                 "shortDescription" : shortDescriptionTextField.text!,

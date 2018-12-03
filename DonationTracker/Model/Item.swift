@@ -9,13 +9,13 @@
 import Foundation
 
 class Item {
-    var name:String;
-    var cost:String;
-    var shortDescription:String;
-    var longDescription:String;
-    var locationID:String;
-    var itemType:String;
-    var date:String;
+    private var name:String;
+    private var cost:String;
+    private var shortDescription:String;
+    private var longDescription:String;
+    private var locationID:String;
+    private var itemType:String;
+    private var date:String;
     
     init(name: String, cost: String, shortDescription:String, longDescription:String, locationID:String, itemType: String, date: String) {
         self.name = name
@@ -41,6 +41,42 @@ class Item {
     
     func getCost() -> String {
         return cost
+    }
+    
+    func getShortDescription() -> String {
+        return shortDescription
+    }
+    
+    func getLongDescription() -> String {
+        return longDescription
+    }
+    
+    func getDate() -> String {
+        return date
+    }
+    
+    func setName(name: String) {
+        self.name = name
+    }
+    
+    func setCost(cost: String) {
+        self.cost = cost
+    }
+    
+    func setShortDescription(shortDescription: String) {
+        self.shortDescription = shortDescription
+    }
+    
+    func setLongDescription(longDescription: String) {
+        self.longDescription = longDescription
+    }
+    
+    func setLocationID(locationID: String) {
+        self.locationID = locationID
+    }
+    
+    func setItemType(itemType: String) {
+        self.itemType = itemType
     }
     
 }

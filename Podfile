@@ -15,6 +15,8 @@ pod 'Firebase/Firestore'
 pod 'SVProgressHUD'
 pod 'ChameleonFramework'
 pod 'GoogleSignIn'
+pod 'GoogleMaps'
+pod 'GooglePlaces'
 
 end
 
