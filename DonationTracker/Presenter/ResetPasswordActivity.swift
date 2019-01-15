@@ -18,7 +18,7 @@ class ResetPasswordActivity: UIViewController {
         super.viewDidLoad()
         
     }
-    
+    //this is a test
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
